@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dom</title>
+</head>
+<body>
+  <p>
+    amazon oder cost calculater
+  </p>
+
+  
+  <input type="number"
+  placeholder="cost of order"
+  class="js-input-cost"
+  onkeydown="
+  if (event.key==='Enter') {
+    costcalculater();
+
+  }
+  
+  "
+  >
+
+  <button onclick="
+  costcalculater();
+  ">
+    calculate
+  </button>
+
+  <p class="totalcost"></p>
+
+
+
+
+  <script>
+    
+    function costcalculater() {
+       
+      let cost= Number(document.querySelector('.js-input-cost').value);
+      
+      if (cost < 40 ) {
+        cost += 10 ;
+      }
+      document.querySelector('.totalcost').innerHTML = `$${cost}`;
+      
+
+    }
+
+
+    
+  </script>
+</body>
+</html>

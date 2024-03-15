@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rock-paper-scissor</title>
+
+    
+<body>
+
+
+
+    <p>
+        rock paper scissor game
+    </p>
+
+    <button onclick="
+     playgame('rock');
+    ">
+        rock
+    </button>
+
+    <button onclick="
+    playgame('paper');
+    ">
+        paper
+    </button>
+
+    <button onclick="
+     playgame('scissor');
+    ">
+        scissor
+    </button>
+    <button onclick="
+    score.win=0;
+    score.loose=0;
+    score.tie=0;
+    localStorage.removeItem('score');
+    ">
+        reset score
+    </button>
+
+
+<script>
+
+    let score = JSON.parse(localStorage.getItem('score')) ||  {
+        win:0,
+        loose:0,
+        tie:0
+    }
+
+   /* if (score === null) {
+
+        score = {
+            win:0,
+            loose:0,
+            tie:0
+        }
+    }
+    */
+
+    function playgame(playerChoice) {
+
+        const computerChoice = pickcomputermove();
+        let result='';
+
+        if(playerChoice === 'scissor') {
+            if (computerChoice === 'rock') {
+            result='you loose';
+
+            }
+            else if(computerChoice === 'paper') {
+            result='you won';
+           
+            }
+            else if(computerChoice === 'scissor') {
+            result='Tie';
+
+            }
+        }else if(playerChoice === 'paper') {
+            if(computerChoice === 'rock') {
+            result ='you won';
+
+            }else if(computerChoice === 'paper') {
+            result='Tie';
+
+            }else if(computerChoice === 'scissor') {
+            result='you loose';
+
+            }
+        }else if(playerChoice === 'rock') {
+            if (computerChoice === 'rock') {
+            result='Tie';
+
+            }
+            else if(computerChoice === 'paper') {
+            result='you loose';
+
+            }
+            else if(computerChoice === 'scissor') {
+            result='you won';
+            }
+        }
+
+
+        if (result === 'you won') {
+            score.win += 1;
+        }else if (result === 'you loose') {
+            score.loose += 1;
+        }else if(result === 'Tie') {
+            score.tie += 1;
+        }
+
+        localStorage.setItem('score',JSON.stringify(score));
+        alert(`your ${playerChoice} ,computer ${computerChoice},${result} !
+win:${score.win},loose:${score.loose},.Tie:${score.tie} `);
+    }
+
+
+    function pickcomputermove() {
+
+        let computerChoice='';
+        const randomChoice=Math.random();
+
+        if (randomChoice >= 0 && randomChoice < 1/3) {
+        computerChoice='rock';
+        }
+        else if(randomChoice >= 1/3 && randomChoice <2/3) {
+        computerChoice='paper';
+        }
+        else if(randomChoice >=2/3 && randomChoice < 1) {
+        computerChoice='scissor';
+        }
+
+        return computerChoice;
+    }
+    
+
+    
+
+     
+     
+
+    
+    
+
+</script>
+
+</body>
+</html>

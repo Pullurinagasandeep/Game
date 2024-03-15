@@ -1,0 +1,42 @@
+body{
+  background-color: rgb(22, 22, 22);
+  color: white;
+  font-family: Arial;
+}
+
+.title{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.js-button-move{
+
+  background-color: transparent;
+  border: 3px solid white;
+  height: 120px;
+  width: 120px;
+  margin-left: 10px;
+  margin-top: 10px;
+  border-radius:60px;
+  cursor: pointer;
+}
+
+.move{
+  height: 50px;
+}
+.js-result{
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 25px;
+  font-weight: bold;
+
+}
+
+.js-moves{
+  margin-bottom: 70px;
+}
+.reset-button{
+  border: none;
+  font-size: 14px;
+  padding: 10px 22px;
+}
