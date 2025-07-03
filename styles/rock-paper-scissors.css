@@ -6,7 +6,9 @@ body{
   justify-content:center;
   align-items:center;
 }
-
+.container{
+  border:2px solid gold;
+}
 .title{
   font-size: 30px;
   font-weight: bold;
