@@ -7,9 +7,7 @@ body{
   align-items:center;
   height:100vh;
 }
-.container{
-  border:2px solid gold;
-}
+
 .title{
   font-size: 30px;
   font-weight: bold;
