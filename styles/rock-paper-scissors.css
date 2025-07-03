@@ -2,6 +2,9 @@ body{
   background-color: rgb(22, 22, 22);
   color: white;
   font-family: Arial;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
 .title{
